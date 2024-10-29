@@ -176,6 +176,9 @@
     <Compile Include="Data\personas.cs">
       <DependentUpon>DcTestMensajeria.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\telefonos.cs">
+      <DependentUpon>DcTestMensajeria.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -11,5 +11,9 @@ namespace Api.DsiCode.Principal.Infraestructura
     {
         List<personas> GetAllByDireccion(int id);
         List<personas> GetPersonas();
+        List<dynamic> GetPersonsByName(string param);
+        List<dynamic> GetPersonsByNameDireccion(string param);
+        List<dynamic> GetPersonsDistinct();
+        List<dynamic> GetPersonsLeftJoin();
     }
 }

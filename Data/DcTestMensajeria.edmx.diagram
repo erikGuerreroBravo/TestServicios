@@ -8,6 +8,8 @@
         <EntityTypeShape EntityType="TestDbMensajeriaModel.direcciones" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TestDbMensajeriaModel.personas" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="TestDbMensajeriaModel.FK_personas_direcciones" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TestDbMensajeriaModel.telefonos" Width="1.5" PointX="0.75" PointY="4.875" />
+        <AssociationConnector Association="TestDbMensajeriaModel.FK_personas_telefonos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

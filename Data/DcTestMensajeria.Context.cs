@@ -27,5 +27,6 @@ namespace Api.DsiCode.Principal.Data
     
         public virtual DbSet<direcciones> direcciones { get; set; }
         public virtual DbSet<personas> personas { get; set; }
+        public virtual DbSet<telefonos> telefonos { get; set; }
     }
 }

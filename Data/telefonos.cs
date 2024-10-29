@@ -12,17 +12,19 @@ namespace Api.DsiCode.Principal.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class personas
+    public partial class telefonos
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
-        public string ApellidoPaterno { get; set; }
-        public string ApellidoMaterno { get; set; }
-        public int Edad { get; set; }
-        public Nullable<int> IdDireccion { get; set; }
-        public Nullable<int> IdTelefono { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public telefonos()
+        {
+            this.personas = new HashSet<personas>();
+        }
     
-        public virtual direcciones direcciones { get; set; }
-        public virtual telefonos telefonos { get; set; }
+        public int Id { get; set; }
+        public string NumeroCelular { get; set; }
+        public string NumeroCasa { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<personas> personas { get; set; }
     }
 }

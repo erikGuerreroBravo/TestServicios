@@ -25,5 +25,37 @@ namespace Api.DsiCode.Principal.Controllers
         {
             return Ok(services.GetPersonas());
         }
+
+        [HttpGet]
+        [Route("dinamic/{nombre}")]
+        public IHttpActionResult Get(string nombre) 
+        {
+            return Ok(services.GetPersonsByName(nombre));
+        }
+
+        [HttpGet]
+        [Route("dinamic/ordenamiento/{nombre}")]
+        public IHttpActionResult GetOrdenamiento(string nombre)
+        {
+            return Ok(services.GetPersonsByNameDireccion(nombre));
+        }
+
+        [HttpGet]
+        [Route("dinamic/leftjoin")]
+        public IHttpActionResult GetOrdenamientoLeftJoin()
+        {
+            return Ok(services.GetPersonsLeftJoin());
+        }
+
+        [HttpGet]
+        [Route("dinamic/distinct")]
+        public IHttpActionResult GetDistinct()
+        {
+            return Ok(services.GetPersonsDistinct());
+        }
+
+
+
+
     }
 }
