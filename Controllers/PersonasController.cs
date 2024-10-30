@@ -60,7 +60,7 @@ namespace Api.DsiCode.Principal.Controllers
         [Route("dinamic/objects")]
         public IHttpActionResult GetAllObjects()
         {
-            var mapper = WebApiApplication.Mapper;
+            
             var lista = services.GetAllData();
             var personas =lista.Select(p => new PersonasDto
             {
@@ -85,8 +85,9 @@ namespace Api.DsiCode.Principal.Controllers
                     NumeroCelular = p.telefonos !=null ? p.telefonos.NumeroCelular: ""
                 }
             }).ToList();
-
+            loggerdb.Info("La aplicacion ya funciona de forma correcta");
             return Ok(AutoMapper.Mapper.Map<List<PersonasDto>>(personas));
+            
         }
 
 

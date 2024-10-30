@@ -55,12 +55,17 @@ namespace Api.DsiCode.Principal.Services
                     (from p in contexto.personas
                         where p.Nombre.StartsWith(param)
                         select
-                new { Nombre = p.Nombre, ApellidoPaterno = p.ApellidoPaterno, ApellidoMaterno = p.ApellidoMaterno }).ToList();
-                return lista.Cast<dynamic>().ToList(); // Convertir a dynamic
+                new { 
+                    Nombre = p.Nombre, 
+                    ApellidoPaterno = p.ApellidoPaterno, 
+                    ApellidoMaterno = p.ApellidoMaterno
+                }).ToList();
+                return lista.Cast<dynamic>().ToList(); 
 
             }
             catch (Exception ex)
             {
+                _ = ex.Message;
                 return null;
             }
         }

@@ -12,11 +12,13 @@ namespace Api.DsiCode.Principal
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
-        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        //private static readonly Logger Log = LogManager.GetCurrentClassLogger();
+        private static readonly Logger loggerdb = LogManager.GetLogger("databaseLogger");
+
         protected void Application_Start()
         {
             AutomaperProfile.Run();
-            Logger.Info("Aplicación iniciada.");
+            loggerdb.Info("Aplicación iniciada.");
             GlobalConfiguration.Configure(WebApiConfig.Register);
             
             
@@ -24,7 +26,7 @@ namespace Api.DsiCode.Principal
         protected void Application_Error()
         {
             var exception = Server.GetLastError();
-            Logger.Error(exception, "Ocurrió un error en la aplicación.");
+            loggerdb.Error(exception, "Ocurrió un error en la aplicación.");
         }
     }
 }
