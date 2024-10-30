@@ -1,5 +1,6 @@
 using Api.DsiCode.Principal.Infraestructura;
 using AutoMapper;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,19 @@ namespace Api.DsiCode.Principal
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
-        public static IMapper Mapper { get; private set; }
+        private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
         protected void Application_Start()
         {
             AutomaperProfile.Run();
+            Logger.Info("Aplicación iniciada.");
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            //AutomaperProfile.Run();
             
+            
+        }
+        protected void Application_Error()
+        {
+            var exception = Server.GetLastError();
+            Logger.Error(exception, "Ocurrió un error en la aplicación.");
         }
     }
 }

@@ -176,15 +176,12 @@ namespace Api.DsiCode.Principal.Services
 
             return contexto.personas.Include("direcciones").ToList();
         }
-
-
         public List<personas> GetAllByDireccion(int id)
         {
             return contexto.personas
                 .Include("direcciones")
                 .Where(p=> p.IdDireccion == id).ToList();
         }
-
 
         /// <summary>
         /// Este metodo se encarga de consultar todos los datos de la base de datos, realizando una proyeccion de los datos.
@@ -202,6 +199,9 @@ namespace Api.DsiCode.Principal.Services
                 return null;
             }
         }
+
+        
+
 
 
     }
