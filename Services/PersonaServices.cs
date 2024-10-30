@@ -7,11 +7,11 @@ using System.Security.Cryptography;
 
 namespace Api.DsiCode.Principal.Services
 {
-    public class PersonaServicces : IPersonaServices
+    public class PersonaServices : IPersonaServices
     {
         private readonly TestDbMensajeriaEntities contexto= null;
 
-        public PersonaServicces()
+        public PersonaServices()
         {
              contexto = new TestDbMensajeriaEntities();
         }
@@ -166,6 +166,7 @@ namespace Api.DsiCode.Principal.Services
             }
             catch (Exception ex)
             {
+                _ = ex.Message;
                 return null;
             }
         }
@@ -186,17 +187,19 @@ namespace Api.DsiCode.Principal.Services
 
 
         /// <summary>
-        /// Este metodo se encarga de consultar todos los datos de la base de datos
+        /// Este metodo se encarga de consultar todos los datos de la base de datos, realizando una proyeccion de los datos.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>una lista de personas</returns>
         public List<personas> GetAllData() {
             try
             {
-                personas
+                var lista = contexto.personas.Include("direcciones").Include("telefonos").ToList();
+                return lista;
             }
             catch (Exception ex)
             {
-                _ = ex.Message;                
+                _ = ex.Message;
+                return null;
             }
         }
 

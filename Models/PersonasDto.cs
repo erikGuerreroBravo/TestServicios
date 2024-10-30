@@ -11,6 +11,7 @@ namespace Api.DsiCode.Principal.Models
         public string ApellidoMaterno { get; set; }
         public int Edad { get; set; }
         public int IdDireccion { get; set; }
+        public int IdTelefono { get; set; }
         public DireccionesDto Direcciones { get; set; }
         public TelefonosDto Telefonos { get; set; }
 

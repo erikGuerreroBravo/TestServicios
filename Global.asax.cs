@@ -14,17 +14,9 @@ namespace Api.DsiCode.Principal
         public static IMapper Mapper { get; private set; }
         protected void Application_Start()
         {
-
-            // Configuración de AutoMapper
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile<AutomaperProfile>();
-            });
-
-            Mapper = config.CreateMapper();
-
-            GlobalConfiguration.Configure(WebApiConfig.Register);
             AutomaperProfile.Run();
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            //AutomaperProfile.Run();
             
         }
     }

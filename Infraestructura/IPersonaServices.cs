@@ -10,6 +10,7 @@ namespace Api.DsiCode.Principal.Infraestructura
     public interface IPersonaServices
     {
         List<personas> GetAllByDireccion(int id);
+        List<personas> GetAllData();
         List<personas> GetPersonas();
         List<dynamic> GetPersonsByName(string param);
         List<dynamic> GetPersonsByNameDireccion(string param);

@@ -20,8 +20,7 @@ namespace Api.DsiCode.Principal.Infraestructura
 
            
         }
-
-        public static void Run()
+                public static void Run()
         {
 
             AutoMapper.Mapper.Initialize(a =>
