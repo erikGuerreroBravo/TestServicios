@@ -187,6 +187,7 @@
     <Compile Include="Infraestructura\UnityResolver.cs" />
     <Compile Include="Models\DireccionesDto.cs" />
     <Compile Include="Models\PersonasDto.cs" />
+    <Compile Include="Models\TelefonosDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PersonaServicces.cs" />
   </ItemGroup>

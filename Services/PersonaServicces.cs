@@ -185,6 +185,21 @@ namespace Api.DsiCode.Principal.Services
         }
 
 
+        /// <summary>
+        /// Este metodo se encarga de consultar todos los datos de la base de datos
+        /// </summary>
+        /// <returns></returns>
+        public List<personas> GetAllData() {
+            try
+            {
+                personas
+            }
+            catch (Exception ex)
+            {
+                _ = ex.Message;                
+            }
+        }
+
 
     }
 }
